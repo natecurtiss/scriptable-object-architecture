@@ -4,8 +4,15 @@ using Sirenix.OdinInspector;
 using Sirenix.OdinInspector.Editor;
 using UnityEditor;
 using UnityEngine;
+using static System.String;
 
-namespace ScriptableObjectArchitecture
+#if UNITY_EDITOR
+#endif
+
+#if ODIN_INSPECTOR
+#endif
+
+namespace N8.Utils.SOA.Editor.Editor
 {
     internal sealed class ScriptableObjectVariableCreationWindow : OdinEditorWindow
     {
@@ -48,12 +55,12 @@ namespace ScriptableObjectArchitecture
             _isWriting;
         
         private bool IsAnythingBlank =>
-            string.IsNullOrWhiteSpace(_type) ||
-            string.IsNullOrWhiteSpace(_namespace) ||
-            string.IsNullOrWhiteSpace(_className) ||
-            string.IsNullOrWhiteSpace(_menuName) ||
-            string.IsNullOrWhiteSpace(_newFileName) ||
-            string.IsNullOrWhiteSpace(_pathToFolder);
+            IsNullOrWhiteSpace(_type) ||
+            IsNullOrWhiteSpace(_namespace) ||
+            IsNullOrWhiteSpace(_className) ||
+            IsNullOrWhiteSpace(_menuName) ||
+            IsNullOrWhiteSpace(_newFileName) ||
+            IsNullOrWhiteSpace(_pathToFolder);
 
         [MenuItem("Tools/SOA/Create New ScriptableObject Variable Type")]
         private static void ShowWindow() => GetWindow<ScriptableObjectVariableCreationWindow>().Show();
@@ -112,7 +119,7 @@ namespace ScriptableObjectArchitecture
                 script.AppendLine(line);
             
             if (!isReadonly) 
-                script.Replace(IS_READONLY, string.Empty);
+                script.Replace(IS_READONLY, Empty);
             
             script.Replace(NAMESPACE, _namespace);
             script.Replace(NAME, _className);
@@ -125,10 +132,10 @@ namespace ScriptableObjectArchitecture
 
         private void ClearDetails()
         {
-            _type = string.Empty;
-            _className = string.Empty;
-            _menuName = string.Empty;
-            _newFileName = string.Empty;
+            _type = Empty;
+            _className = Empty;
+            _menuName = Empty;
+            _newFileName = Empty;
         }
     }
 }

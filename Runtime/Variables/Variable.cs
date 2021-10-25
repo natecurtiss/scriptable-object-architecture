@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace ScriptableObjectArchitecture
+namespace N8.Utils.SOA.Variables
 {
     public abstract class Variable<T> : ScriptableObject, ISerializationCallbackReceiver
     {
