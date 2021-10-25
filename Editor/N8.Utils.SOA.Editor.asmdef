@@ -1,0 +1,14 @@
+{
+    "name": "N8.Utils.SOA.Editor",
+    "rootNamespace": "N8.Utils.SOA.Editor",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
