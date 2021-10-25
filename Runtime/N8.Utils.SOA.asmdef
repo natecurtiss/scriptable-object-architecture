@@ -1,0 +1,14 @@
+{
+    "name": "N8.Utils.SOA",
+    "rootNamespace": "N8.Utils.SOA",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
