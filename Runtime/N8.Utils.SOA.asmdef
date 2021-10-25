@@ -1,6 +1,6 @@
 {
-    "name": "N8.Utils.SOA",
-    "rootNamespace": "N8.Utils.SOA",
+    "name": "N8.Utilities.ScriptableObjectArchitecture",
+    "rootNamespace": "N8.Utilities.ScriptableObjectArchitecture",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

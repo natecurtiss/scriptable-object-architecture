@@ -1,6 +1,6 @@
 {
-    "name": "N8.Utils.SOA.Editor",
-    "rootNamespace": "N8.Utils.SOA.Editor",
+    "name": "N8.Utilities.ScriptableObjectArchitecture.Editor",
+    "rootNamespace": "N8.Utilities.ScriptableObjectArchitecture.Editor",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
