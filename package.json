@@ -1,6 +1,6 @@
 {
-  "name": "com.n8dev.utils.soa",
-  "displayName": "N8Dev.Utils.SOA",
+  "name": "com.n8.utils.soa",
+  "displayName": "N8.Utils.SOA",
   "version": "0.1.0",
   "description": "Delivers flexible decoupling via ScriptableObject editor references inside Unity.",
   "keywords": [
@@ -18,7 +18,7 @@
     "url": "git+ssh://git@github.com/N-8-D-e-v/scriptable-object-architecture.git"
   },
   "license": "The Unlicense",
-  "author": "N8Dev (https://github.com/N-8-D-e-v)",
+  "author": "n8dev (https://github.com/N-8-D-e-v)",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
