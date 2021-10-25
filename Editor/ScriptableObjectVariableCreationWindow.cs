@@ -33,7 +33,7 @@ namespace N8.Utils.SOA.Editor.Editor
             "",
             $"namespace {NAMESPACE}",
             "{",
-            $"\t[CreateAssetMenu(fileName = \"New#NAME\", menuName = \"N8Dev/SOA/Variables/{MENU_NAME}\"), InlineEditor]",
+            $"\t[CreateAssetMenu(fileName = \"New#NAME\", menuName = \"N8/Utils/SOA/Variables/{MENU_NAME}\"), InlineEditor]",
             $"\tpublic sealed class {IS_READONLY}{NAME} : {IS_READONLY}Variable<{TYPE}>",
             "\t{",
             "",
