@@ -1,7 +1,7 @@
 {
   "name": "com.n8dev.utils.soa",
   "displayName": "N8Dev.Utils.SOA",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Delivers flexible decoupling via ScriptableObject editor references inside Unity.",
   "keywords": [
     "unity",

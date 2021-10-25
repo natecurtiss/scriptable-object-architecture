@@ -13,5 +13,9 @@ namespace N8.Utils.SOA.Variables
 
         public void OnBeforeSerialize() => Value = _value;
         public void OnAfterDeserialize() { }
+        
+        public static implicit operator T(ReadonlyVariable<T> input) => input.Value;
+        
+        public override string ToString() => Value.ToString();
     }
 }
