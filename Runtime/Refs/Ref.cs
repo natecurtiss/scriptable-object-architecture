@@ -17,12 +17,14 @@ namespace N8.Utils.SOA
         [SerializeField] private TVar variable;
         [SerializeField] private Boolean useDefault;
 
+        private Boolean IsUsingDefault => (useDefault || (variable == null));
+        
         public T Value
         {
-            get => (variable == null || useDefault) ? defaultValue : variable;
+            get => IsUsingDefault ? defaultValue : (T)variable;
             set
             {
-                if (useDefault)
+                if (IsUsingDefault)
                 {
                     defaultValue = value;
                 }
