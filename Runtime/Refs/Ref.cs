@@ -9,19 +9,21 @@ namespace N8.Utils.SOA
     using Vars;
     
     [Serializable]
-    public class Ref<T, TVar> where TVar : Var<T>
+    public class Ref<T, TVar> : IRef where TVar : Var<T>
     {
         #region Fields & Properties
         
-        [SerializeField] private T defaultValue;
-        [SerializeField] private TVar variable;
-        [SerializeField] private Boolean useDefault;
+        [SerializeField] protected Boolean useDefault;
+        [SerializeField] protected T defaultValue;
+        
+        [field: SerializeField] 
+        protected TVar Var { get; private set; }
 
-        private Boolean IsUsingDefault => (useDefault || (variable == null));
+        private Boolean IsUsingDefault => (useDefault || (Var == null));
         
         public T Value
         {
-            get => IsUsingDefault ? defaultValue : (T)variable;
+            get => IsUsingDefault ? defaultValue : (T)Var;
             set
             {
                 if (IsUsingDefault)
@@ -30,7 +32,7 @@ namespace N8.Utils.SOA
                 }
                 else
                 {
-                    variable.Value = value;
+                    Var.Value = value;
                 }
             }
         }
@@ -40,15 +42,15 @@ namespace N8.Utils.SOA
         #region Structors
 
         public Ref() { }
-        
-        public Ref(T value)
+
+        public Ref(T val)
         {
-            this.Value = value;
+            this.Value = val;
         }
         
-        public Ref(TVar variable)
+        public Ref(TVar var)
         {
-            this.variable = variable;
+            this.Var = var;
         }
         
         /*
@@ -78,16 +80,14 @@ namespace N8.Utils.SOA
         //TODO: Conversion Operators default check.
         
         [MethodImpl(AggressiveInlining)]
-        public static implicit operator T (Ref<T, TVar> input) => input.Value;
+        public static implicit operator T    (Ref<T, TVar> input) => input.Value;
+        [MethodImpl(AggressiveInlining)]
+        public static implicit operator TVar (Ref<T, TVar> input) => input.Var;
         
         [MethodImpl(AggressiveInlining)]
-        public static implicit operator TVar (Ref<T, TVar> input) => input.variable;
-        
+        public static implicit operator Ref<T, TVar> (T val)    => new Ref<T, TVar>(val: val);
         [MethodImpl(AggressiveInlining)]
-        public static implicit operator Ref<T, TVar> (T value) => new Ref<T, TVar>(value);
-        
-        [MethodImpl(AggressiveInlining)]
-        public static implicit operator Ref<T, TVar> (TVar variable) => new Ref<T, TVar>(variable);
+        public static implicit operator Ref<T, TVar> (TVar var) => new Ref<T, TVar>(var: var);
 
         #endregion
     }
