@@ -38,6 +38,18 @@ namespace N8.Utils.SOA
         #region Structors
 
         public Ref() { }
+        
+        public Ref(T value)
+        {
+            this.Value = value;
+        }
+        
+        public Ref(TVar variable)
+        {
+            this.variable = variable;
+        }
+        
+        /*
         public Ref(T value, Boolean useDefault = true)
         {
             this.useDefault = useDefault;
