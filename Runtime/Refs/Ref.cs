@@ -8,6 +8,8 @@ namespace N8.Utils.SOA
 {
     using Vars;
     
+    public interface IRef { } //for PropertyDrawer purposes
+    
     [Serializable]
     public class Ref<T, TVar> : IRef where TVar : Var<T>
     {
