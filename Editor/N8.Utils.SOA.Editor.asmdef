@@ -1,7 +1,9 @@
 {
     "name": "N8.Utils.SOA.Editor",
     "rootNamespace": "N8.Utils.SOA.Editor",
-    "references": [],
+    "references": [
+        "N8.Utils.SOA"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
